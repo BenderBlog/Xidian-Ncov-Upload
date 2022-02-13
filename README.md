@@ -6,11 +6,16 @@
 
 ## 如何运行(Windows)
 1. 先按照官方步骤，用手机填报一遍：西电企业号->移动门户->健康卡
+
 2. 将脚本文件放在一个重要的，不易发现的位置上。在脚本第10行和第11行的引号里，填入自己的一站式账户和密码(没有加密啊，一定要藏好了！)
+
 3. 下载python：请去[官网](https://www.python.org/downloads/windows/)下载，选择最新版的"Windows installer (64-bit)"。安装的时候，一定要选上"ADD TO PATH"选项。
+
 4. 在存放脚本的位置，打开**管理员权限**的Powershell。
 ![这么打开啊](https://legacy.superbart.xyz/picture/Upload%20Health%20Situation/Screenshot_20220209_162424.jpg)  
+
 5. 在打开的窗口中，分别输入以下两个命令：
+
 ```powershell
 pip install pyppeteer
 python .\reportNcov-outschool.py
@@ -21,17 +26,19 @@ python .\reportNcov-outschool.py
 位置信息已经获取，你目前在: 幻想乡 红魔馆
 信息已经上报完毕，你的情况是: 今天已经填报了
 ```
+
 **各位一定要注意你的位置信息是不是显示正确了！**
+
 5. Windows计划任务配置
     1. 同时按下Win+R，弹出的窗口中输入`taskschd.msc`
     2. 打开“计划任务”，右面找"创建基本任务"，点击之。
-    ![](https://legacy.superbart.xyz/picture/Upload%20Health%20Situation/Screenshot_20220209_162838.jpg)
+        ![](https://legacy.superbart.xyz/picture/Upload%20Health%20Situation/Screenshot_20220209_162838.jpg)  
     3. 打开的窗口中，起名字不说了。触发器选"每天"，自己选个合适的时间(电脑在那时一定是开机状态)。
-    ![](https://legacy.superbart.xyz/picture/Upload%20Health%20Situation/Screenshot_20220209_163117.jpg)
+        ![](https://legacy.superbart.xyz/picture/Upload%20Health%20Situation/Screenshot_20220209_163117.jpg)  
     4. 在执行程序的时候写python可执行文件的安装路径，参数就是你脚本的所在路径。最后完成的时候，选择"打开此任务属性的对话框"。
-    ![](https://legacy.superbart.xyz/picture/Upload%20Health%20Situation/Screenshot_20220209_163426.jpg)
+        ![](https://legacy.superbart.xyz/picture/Upload%20Health%20Situation/Screenshot_20220209_163426.jpg)  
     5. 在新打开的窗口中，选择"条件"，然后把电源选项更改，之后保存。
-    ![](https://legacy.superbart.xyz/picture/Upload%20Health%20Situation/Screenshot_20220209_164304.jpg)
+        ![](https://legacy.superbart.xyz/picture/Upload%20Health%20Situation/Screenshot_20220209_164304.jpg)  
 
 ## 在Linux上运行的提示
 1. 安装软件包`python-pyppeteer`。
@@ -52,7 +59,12 @@ python .\reportNcov-outschool.py
 [xidian-script的晨午晚检脚本](https://github.com/xdlinux/xidian-scripts/blob/master/Python/check_in.py)
 
 ## 本脚本授权协议翻译
-Unlicense授权协议
+
+SuperBart 公有领域软件授权协议<br>
+SuperBart Public Domain Software License
+
+以下是非附加条款：<br>
+Following are non-additional terms:
 
 本软件自由，无约束地，向公有领域发布。<br>
 This is free and unencumbered software released into the public domain.
@@ -69,16 +81,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 欲知更多信息，请访问 https://unlicense.org<br>
 For more information, please refer to <https://unlicense.org>
 
-附带条款两则：
-1. 如使用本软件，即表示您知晓(acknowledge)：
-	* 作者反对996等不合理竞争和劳动。
-    * 作者反感官僚化的任何东西，包括无意义的会议，课程等。
-2. 本附带条款不具有强制性，无论是法律上的，还是其他方面。你在发行时可以删除附带条款。
-
+附带条款两则：<br>
 Two additional terms：
 
-1. As long as you use this software, you acknowledge:
-	* The author against improper competition and labour, for example,996 working schedule.
-    * The author dislike anything which are bureaucratization, such as meaningless meeting and courses.
+1. 如使用本软件，即表示您知晓 (acknowledge) 软件作者反对996等不合理竞争和劳动。他/她还反感官僚化的任何东西，包括无意义的会议，课程等。<br>
+As long as you use this software, you acknowledge that the author of the software strongly against improper competition and labour, for example, 996 working schedule. And he or she dislike anything which are bureaucratization, such as meaningless meeting and courses.
 
-2. These additional terms have no mandatory in either laws, or other fields. You may delete additional terms when distriubuing this software.
+2. 本附带条款不具有强制性，无论是法律上的，还是其他方面。你无需为了使用该软件而赞同附加条款的内容。只要你遵守上述非附加条款，你在使用时可以删除附带条款。<br>
+The additional terms have no mandatory in either laws, or other fields. You don't need to agree with the additional terms in order to use this software. And you may delete the additional terms when using this software, as long as you obey the non-additional terms above.
