@@ -55,6 +55,8 @@ USERNAME = ""
 PASSWORD = ""
 LOGIN = "https://xxcapp.xidian.edu.cn/ncov/wap/default/index"
 REPORT = "https://xxcapp.xidian.edu.cn/ncov/wap/default/save"
+# 如果定位很不好用的话，可以从 http://geoinfo.hawa130.com/ 获取信息并贴在三个引号中间
+PLACE = ‘’‘ ’‘’
 
 async def commit(username, password):
     # 贴士 查阅一下你电脑的Chrome/Chromium安装地址 然后上网搜怎么加参数
@@ -67,9 +69,14 @@ async def commit(username, password):
     await page.evaluate("vm.login()")
     await page.waitForNavigation({ "waitUntil": "domcontentloaded" })
     print("登陆成功，并已经跳转到填报界面")
-    # 获取位置信息，执行完那个函数后，等待2秒钟
-    await page.evaluate("vm.getLocation()")
-    await asyncio.sleep(2)
+    if PLACE != " ":
+        print("填报用户信息")
+        # 现在可以伪造信息啦
+        await page.evaluate("(pl) => vm.locatComplete(pl)", json.loads(PLACE))
+    else:
+        print("直接获取信息")
+        await page.evaluate("vm.getLocation()")
+        await asyncio.sleep(2)
     print("位置信息已经获取，你目前在:",await page.evaluate("vm.info.province"),await page.evaluate("vm.info.city"))
     await page.evaluate("() => vm.save()")
     situation = await page.waitForResponse(REPORT)
